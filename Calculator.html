@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>My Web Page</title>
+<?php
+		$n1="";
+		$n2="";
+		$s="";
+		$r1="";
+		if(isset($_POST['btn']))
+		{
+			$n1=$_POST['no1'];
+			$n2=$_POST['no2'];
+			$s=$_POST['sign'];
+
+			if($s=="+")
+			{
+				$r1=$n1+$n2;
+			}
+			else if($s=="-")
+			{
+				$r1=$n1-$n2;
+			}
+			else if($s=="*")
+			{
+				$r1=$n1*$n2;
+			}
+			else if($s=="/")
+			{
+				$r1=$n1/$n2;
+			}
+			else if($s=="%")
+			{
+				$r1=$n1%$n2;
+			}
+		}
+		else{
+			$n1="";
+			$n2="";
+			$r1="";
+		}
+?>
+</head>
+<body>
+<center>
+<form action="" method="post">
+	<h2>Calculator</h2>
+	No-1:<input type="text" name="no1" required value="<?php echo $n1?>"><br><br>
+	Sign:<input type="text" name="sign" required value="<?php echo $s?>"><br><br>
+	No-2:<input type="text" name="no2" required value="<?php echo $n2?>"><br><br>
+	Result:<input type="text" name="res" value="'<?php echo $r1?>'"><br><br>
+	<input type="submit" name="btn" value="Add">
+	<input type="submit" name="reset" value="Reset">
+</form>
+</center>
+</body>
+</html>
